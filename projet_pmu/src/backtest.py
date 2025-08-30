@@ -9,7 +9,7 @@ from sklearn.compose import ColumnTransformer
 import lightgbm as lgb
 import xgboost as xgb
 from catboost import CatBoostRanker
-from src import config
+from projet_pmu.src import config
 
 def train_temporary_model(train_df):
     """Entraîne un comité d'experts sur un jeu de données spécifique."""

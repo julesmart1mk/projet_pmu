@@ -1,0 +1,15 @@
+{
+    "Simple GAGNANT": 8.0,
+    "Simple PLACE": 2.5,
+    "Couple GAGNANT": 15.0,
+    "Couple PLACE": 8.0,
+    "Couple ORDRE": 30.0,
+    "2sur4": 4.0,
+    "Tierce ORDRE": 150.0,
+    "Tierce DESORDRE": 40.0,
+    "Quarte ORDRE": 800.0,
+    "Quarte DESORDRE": 150.0,
+    "Quinte ORDRE": 5000.0,
+    "Quinte DESORDRE": 400.0,
+    "Pick 5": 300.0
+}

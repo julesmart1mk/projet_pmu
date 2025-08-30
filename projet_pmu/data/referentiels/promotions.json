@@ -1,0 +1,9 @@
+[
+    {
+        "hippodrome": "DEAUVILLE",
+        "date": "2025-08-30",
+        "boost": 1.20,
+        "types": ["e-Quarte", "e-Super4", "e-Multi", "e-Mini-Multi"],
+        "description": "Gains boostés de 20% à Deauville"
+    }
+]
