@@ -1,0 +1,42 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent.parent
+DATA_DIR = BASE_DIR / "data"
+MODELS_DIR = BASE_DIR / "models"
+PREDICTIONS_DIR = BASE_DIR / "predictions"
+REF_DIR = DATA_DIR / "referentiels"
+RAW_COURSES_DIR = DATA_DIR / "courses_brutes"
+PREDICT_DIR = DATA_DIR / "a_predire"
+PROCESSED_DIR = DATA_DIR / "processed"
+
+REF_CHEVAUX_FILE = REF_DIR / "Chevaux.csv"
+REF_JOCKEY_FILE = REF_DIR / "jockey.csv"
+REF_ENTRAINEUR_FILE = REF_DIR / "entraineur.csv"
+RAPPORTS_ESTIMES_FILE = REF_DIR / "rapports_estimes.json"
+
+CLEAN_DATA_PATH = PROCESSED_DIR / "1_database_propre.parquet"
+STACKING_MODEL_PATH = MODELS_DIR / "stacking_model_pipeline.pkl"
+
+STUDY_LGBM_PATH = MODELS_DIR / "study_lgbm.pkl"
+STUDY_XGB_PATH = MODELS_DIR / "study_xgb.pkl"
+STUDY_CATBOOST_PATH = MODELS_DIR / "study_catboost.pkl"
+
+TARGET_COLUMN = "PLACE_CHEVAL"
+
+FEATURES_TO_USE = [
+    'HIPPODROME_ID', 'DISTANCE', 'NOMBRE_PARTANT_COURSE', 'ALLOCATION_TOTAL_COURSE',
+    'AGE_CHEVAL', 'POIDS_CHEVAL', 'STALLE_CHEVAL', 'VALEUR_HANDICAP_CHEVAL', 'COTE_CHEVAL',
+    'Jockey_Partants', 'Jockey_Victoires', 'Jockey_Ratio_Victoire',
+    'Entraineur_Partants', 'Entraineur_Gain_Moyen_Partant',
+    'COTE_RANG', 'POIDS_RANG', 'VALEUR_HANDICAP_RANG', 'JOCKEY_RATIO_RANG',
+    'MUSIQUE_PLACE_DERNIERE_COURSE', 'MUSIQUE_VICTOIRES_3_DERNIERES', 'MUSIQUE_PLACES_5_DERNIERES',
+    'MUSIQUE_TAUX_INCIDENTS',
+    'SYNERGIE_JOCKEY_CHEVAL_RATIO',
+    'SYNERGIE_ENTRAINEUR_CHEVAL_RATIO',
+    'DISCIPLINE', 'PISTE_COURSE', 'CORDE', 'PENETROMETRIE'
+]
+
+if TARGET_COLUMN in FEATURES_TO_USE:
+    FEATURES_TO_USE.remove(TARGET_COLUMN)
+
+CATEGORICAL_FEATURES = ['DISCIPLINE', 'PISTE_COURSE', 'CORDE', 'HIPPODROME_ID']
